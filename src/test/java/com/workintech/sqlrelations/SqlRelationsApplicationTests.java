@@ -15,26 +15,24 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
-@ExtendWith(ResultAnalyzer.class)
+
 class SqlRelationsApplicationTests {
+	@Autowired
 	private DoctorRepository doctorRepository;
-	private NurseRepository nurseRepository;
-	private OperationRepository operationRepository;
-	private PatientRepository patientRepository;
-	private SurgeryRepository surgeryRepository;
 
 	@Autowired
-	public SqlRelationsApplicationTests(DoctorRepository doctorRepository,
-										NurseRepository nurseRepository,
-										OperationRepository operationRepository,
-										PatientRepository patientRepository,
-										SurgeryRepository surgeryRepository) {
-		this.doctorRepository = doctorRepository;
-		this.nurseRepository = nurseRepository;
-		this.operationRepository = operationRepository;
-		this.patientRepository = patientRepository;
-		this.surgeryRepository = surgeryRepository;
-	}
+	private NurseRepository nurseRepository;
+
+	@Autowired
+	private OperationRepository operationRepository;
+
+	@Autowired
+	private PatientRepository patientRepository;
+
+	@Autowired
+	private SurgeryRepository surgeryRepository;
+
+
 
 	@DisplayName("Doktor tablosu mevcut mu ? Doğru oluşturulmuş mu ?")
 	@Test

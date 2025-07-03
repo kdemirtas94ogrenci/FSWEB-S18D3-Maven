@@ -1,12 +1,12 @@
 package com.workintech.sqlrelations.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import jakarta.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Getter
+@Setter
 @Entity
 @Table(name = "surgery")
 public class Surgery {
@@ -22,4 +22,36 @@ public class Surgery {
 
     @Column(name = "doctor_id")
     private long doctorId;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(long doctorId) {
+        this.doctorId = doctorId;
+    }
+
+    public long getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(long patientId) {
+        this.patientId = patientId;
+    }
+
+    public long getNurseId() {
+        return nurseId;
+    }
+
+    public void setNurseId(long nurseId) {
+        this.nurseId = nurseId;
+    }
 }
